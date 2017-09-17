@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+narg=$#
+
+#echo $narg arguments
+#[ $narg -ge 1 ] && doival="$1" || `read doival`
+
+if [[ $narg -ge 1 ]]; then
+#  echo command line arg supplied
+  doival="$1"
+else
+  read doival
+#  echo doi comes from stdin
+fi
+
+
+
+
+#echo "fetching doi: $doival"
+
+
+
+
+
+
+
+curl -LH "Accept: application/x-bibtex" http://dx.doi.org/$doival
